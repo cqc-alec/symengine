@@ -28,10 +28,6 @@ namespace SymEngine
 
 class Tokenizer;
 
-std::map<const std::string,
-         const std::function<RCP<const Basic>(const RCP<const Basic> &)>>
-init_parser_single_arg_functions();
-
 class Parser
 {
 private:
