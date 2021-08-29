@@ -5,7 +5,14 @@
 namespace SymEngine
 {
 
-std::vector<unsigned> Sieve::_primes = {2, 3, 5, 7, 11, 13, 17, 19, 23, 29};
+static std::vector<unsigned> init_primes()
+{
+    static const std::vector<unsigned> primes
+        = {2, 3, 5, 7, 11, 13, 17, 19, 23, 29};
+    return primes;
+}
+
+std::vector<unsigned> Sieve::_primes = init_primes();
 bool Sieve::_clear = true;
 unsigned Sieve::_sieve_size = 32 * 1024 * 8; // 32K in bits
 
